@@ -1,5 +1,5 @@
 import React from 'react';
-import './about.css';
+import './About.css';
 import gifDesarrollador from '../../assets/gif-portfolio.gif'; // Reemplazá por el nombre real si es distinto
 
 const About = () => {
