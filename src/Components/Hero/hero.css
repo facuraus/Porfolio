@@ -1,0 +1,79 @@
+.hero {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 0 20px;
+}
+
+.hero-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%; /* Hace la imagen redonda */
+  border: 4px solid white;
+  margin-bottom: 30px;
+}
+
+.hero-title {
+  font-size: 2.2rem;
+  line-height: 1.5;
+  max-width: 900px;
+  font-weight: 500;
+}
+
+.hero h1 span {
+  background: linear-gradient(270deg, #32ff7e 10%, #0be881 50%, #00d68f 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  margin: 15px;
+}
+
+.hero-action {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.hero-contacto {
+  padding: 25px 45px;
+  border-radius: 50px;
+  background: linear-gradient(270deg, #32ff7e 10%, #0be881 50%, #00d68f 90%);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hero-contacto:hover {
+  background: linear-gradient(270deg, #00d68f 10%, #0be881 50%, #32ff7e 90%);
+}
+
+.hero-CV {
+  padding: 25px 75px;
+  border-radius: 50px;
+  border: 2px solid #00d68f; /* verde vibrante */
+  color: #00d68f; /* para que el texto también sea verde */
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none; /* quitar subrayado */
+}
+
+.hero-CV:hover {
+  background-color: #00d68f;
+  color: #0a0a0a;
+  border-color: #00d68f;
+}

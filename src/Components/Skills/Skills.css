@@ -1,0 +1,107 @@
+/* Ocupa toda la pantalla, fondo negro */
+.skills-section {
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  color: #e0e0e0;
+  text-align: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #00ff99;
+}
+
+/* Contenedor para que los cuadros estén en fila */
+.categories-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: nowrap;
+}
+
+/* Cada categoría es un cuadro */
+.category-box {
+  background: #111;
+  border: 2px solid #00ff99;
+  border-radius: 15px;
+  padding: 25px;
+  width: 320px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Scroll interno si hay muchas skills */
+.category-box::-webkit-scrollbar {
+  width: 6px;
+}
+.category-box::-webkit-scrollbar-thumb {
+  background-color: #00ff99;
+  border-radius: 3px;
+}
+
+.category-title {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #00cc77;
+  border-bottom: 2px solid #00cc77;
+  padding-bottom: 5px;
+  width: 100%;
+  text-align: center;
+  user-select: none;
+}
+
+.skills-circles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  flex-grow: 1;
+  align-content: flex-start;
+}
+
+/* Cada skill en círculo */
+.skill-circle {
+  background: #222;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  box-shadow: 0 0 8px #00ff9977;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  text-align: center;
+  padding: 8px;
+}
+
+.skill-circle:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 15px #00ff99cc;
+}
+
+.skill-icon {
+  font-size: 2.8rem;
+  margin-bottom: 5px;
+}
+
+.skill-name {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #00ff99;
+  line-height: 1.1;
+}
