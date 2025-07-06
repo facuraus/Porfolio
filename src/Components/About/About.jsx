@@ -4,7 +4,7 @@ import gifDesarrollador from '../../assets/gif-portfolio.gif'; // Reemplazá por
 
 const About = () => {
   return (
-    <div className="about-container">
+    <div id="About" className="about-container">
       <h2 className="about-title">Sobre Mí</h2>
       <div className="about-content">
         <img src={gifDesarrollador} alt="GIF desarrollador" className="about-image" />

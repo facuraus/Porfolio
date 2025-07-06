@@ -47,6 +47,8 @@
 }
 
 .hero-contacto {
+  color: white; /* o el color que quieras */
+  text-decoration: none; /* quita el subrayado */
   padding: 25px 45px;
   border-radius: 50px;
   background: linear-gradient(270deg, #32ff7e 10%, #0be881 50%, #00d68f 90%);
@@ -56,7 +58,9 @@
 
 .hero-contacto:hover {
   background: linear-gradient(270deg, #00d68f 10%, #0be881 50%, #32ff7e 90%);
+  color: white; /* mantené el color en hover */
 }
+
 
 .hero-CV {
   padding: 25px 75px;

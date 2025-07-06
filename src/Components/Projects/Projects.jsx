@@ -57,7 +57,7 @@ const Projects = () => {
 
   return (
     <>
-      <div className="projects-wrapper">
+      <div id="works" className="projects-wrapper">
         <h2 className="projects-title">Mis Proyectos</h2>
         <div className="projects-container">
           {projectsData.map((project) => (
