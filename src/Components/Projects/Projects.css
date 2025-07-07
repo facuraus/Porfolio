@@ -8,14 +8,12 @@
   position: relative;
   z-index: 1;
 
-  /* Fondo GIF que ocupa toda la sección */
   background-image: url('../../assets/fondo-trabajos.gif');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* Overlay oscuro para mejorar legibilidad */
 .projects-wrapper::before {
   content: "";
   position: absolute;
@@ -51,7 +49,17 @@
   border-radius: 20px;
   position: relative;
   z-index: 2;
-  background-color: transparent; /* para que no tape el fondo gif */
+  background-color: transparent;
+}
+
+.project-title {
+  color: #00ff88;
+  font-weight: bold;
+  text-shadow: 0 0 8px #00ff88;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  text-align: center;
+  width: 320px; /* igual al ancho de la tarjeta */
 }
 
 .project-card {
@@ -68,6 +76,7 @@
   cursor: pointer;
   transition: transform 0.3s ease;
   z-index: 2;
+  /* padding-top eliminado */
 }
 
 .project-card:hover {
@@ -110,6 +119,8 @@
   background-color: #00cc66;
   color: white;
 }
+
+/* Resto del CSS modal y responsive igual al que ya tenías */
 
 .modal-overlay {
   position: fixed;
@@ -191,13 +202,13 @@
     max-width: 320px;
     height: 200px;
   }
+
+  .project-title {
+    width: 90vw;
+    max-width: 320px;
+  }
 }
 
-
-/* Ya existentes... */
-/* @media (max-width: 1000px) { ... } */
-
-/* Responsive para tablets y celulares */
 @media (max-width: 768px) {
   .projects-wrapper {
     padding: 30px 15px;
@@ -245,9 +256,13 @@
   .modal-video {
     max-height: 300px;
   }
+
+  .project-title {
+    width: 95%;
+    max-width: 320px;
+  }
 }
 
-/* Responsive para celulares chicos (menos de 480px) */
 @media (max-width: 480px) {
   .projects-title {
     font-size: 1.6rem;

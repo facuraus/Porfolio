@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './Projects.css';
 
 import proyecto1Img from '../../assets/SIGRH+.png';
-// Ya no usás proyecto2Img acá porque lo manejás en ModalProyecto2
 import proyecto3_img1 from '../../assets/proyecto3_img1.png';
 import proyecto3_img2 from '../../assets/proyecto3_img2.png';
 import proyecto2Img from '../../assets/proyecto2.jpg';
@@ -11,7 +10,7 @@ import proyecto5_img1 from '../../assets/Clustering-humano.png';
 import videoPresentacion from '../../assets/SIGRH+_EL_FUTURO_DEL_RECLUTAMIENTO.mp4';
 
 import Proyecto3Carousel from './Proyecto3Carousel';
-import ModalProyecto2 from './ModalProyecto2';  // <-- importaste el nuevo modal
+import ModalProyecto2 from './ModalProyecto2';
 import ModalProyecto4 from './ModalProyecto4';
 import ModalProyecto5 from './ModalProyecto5';
 
@@ -79,18 +78,29 @@ const Projects = () => {
         <h2 className="projects-title">Mis Proyectos</h2>
         <div className="projects-container">
           {projectsData.map((project) => (
-            <div key={project.id} className="project-card">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="project-image"
-              />
-              <button
-                className="project-btn"
-                onClick={() => openModal(project)}
-              >
-                Ver Proyecto
-              </button>
+            <div
+              key={project.id}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginBottom: '30px',
+              }}
+            >
+              <h3 className="project-title">{project.title}</h3>
+              <div className="project-card">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="project-image"
+                />
+                <button
+                  className="project-btn"
+                  onClick={() => openModal(project)}
+                >
+                  Ver Proyecto
+                </button>
+              </div>
             </div>
           ))}
         </div>
