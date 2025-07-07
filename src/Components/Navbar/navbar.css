@@ -1,8 +1,8 @@
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 170px;
 }
 
 .navbar-list {
@@ -22,4 +22,18 @@
 
 .navbar-link.active {
   color: #2ecc71;
+}
+
+/* ----------- MOBILE ADAPTATION ----------- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    margin: 10px 20px;
+  }
+
+  .navbar-list {
+    flex-direction: column;
+    gap: 20px;
+    font-size: 18px;
+  }
 }

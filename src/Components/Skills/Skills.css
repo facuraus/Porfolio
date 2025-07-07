@@ -1,4 +1,4 @@
-/* Ocupa toda la pantalla, fondo negro */
+/* Estilos base - ya estaban bien para escritorio */
 .skills-section {
   min-height: 100vh;
   background-color: #0a0a0a;
@@ -17,7 +17,6 @@
   color: #00ff99;
 }
 
-/* Contenedor para que los cuadros estén en fila */
 .categories-container {
   display: flex;
   gap: 30px;
@@ -27,7 +26,6 @@
   flex-wrap: nowrap;
 }
 
-/* Cada categoría es un cuadro */
 .category-box {
   background: #111;
   border: 2px solid #00ff99;
@@ -42,7 +40,6 @@
   overflow-y: auto;
 }
 
-/* Scroll interno si hay muchas skills */
 .category-box::-webkit-scrollbar {
   width: 6px;
 }
@@ -71,7 +68,6 @@
   align-content: flex-start;
 }
 
-/* Cada skill en círculo */
 .skill-circle {
   background: #222;
   border-radius: 50%;
@@ -104,4 +100,62 @@
   font-size: 0.85rem;
   color: #00ff99;
   line-height: 1.1;
+}
+
+/* ------- Versión Responsive para celulares ------- */
+@media (max-width: 768px) {
+  .categories-container {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .category-box {
+    width: 90%;
+    min-height: auto;
+    max-height: none;
+    padding: 20px;
+  }
+
+  .skills-title {
+    font-size: 2rem;
+  }
+
+  .category-title {
+    font-size: 1.5rem;
+  }
+
+  .skill-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .skill-icon {
+    font-size: 2.2rem;
+  }
+
+  .skill-name {
+    font-size: 0.75rem;
+  }
+}
+
+/* Ajustes extra para pantallas MUY chicas */
+@media (max-width: 480px) {
+  .skills-title {
+    font-size: 1.8rem;
+  }
+
+  .category-box {
+    padding: 15px;
+  }
+
+  .skill-circle {
+    width: 70px;
+    height: 70px;
+  }
+
+  .skill-icon {
+    font-size: 2rem;
+  }
 }

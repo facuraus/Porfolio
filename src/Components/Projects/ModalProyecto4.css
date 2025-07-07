@@ -71,21 +71,9 @@
   padding-left: 10px;
 }
 
-/* Responsive */
-@media (max-width: 1000px) {
-  .modal-custom-content {
-    flex-direction: column;
-    text-align: center;
-    height: auto;
-  }
+/* ---------------- Responsive ---------------- */
 
-  .carousel-image {
-    width: 100%;
-    height: auto;
-  }
-}
-
-/* Responsive tablet */
+/* Tablets y pantallas medianas */
 @media (max-width: 1000px) {
   .modal-custom-content {
     flex-direction: column;
@@ -111,7 +99,7 @@
   }
 }
 
-/* Responsive celular */
+/* Celulares */
 @media (max-width: 768px) {
   .carousel-buttons {
     gap: 15px;
@@ -129,7 +117,7 @@
   }
 }
 
-/* Responsive celular chico */
+/* Celulares chicos */
 @media (max-width: 480px) {
   .carousel-image {
     max-height: 200px;

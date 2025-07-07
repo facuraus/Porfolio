@@ -1,3 +1,5 @@
+/* src/Components/Projects/ModalProyecto2.css */
+
 .modal-custom-content {
   display: flex;
   gap: 40px;
@@ -22,7 +24,8 @@
   box-sizing: border-box;
 }
 
-.carousel-image {
+.carousel-image,
+.carousel-video {
   width: auto;
   max-height: 320px;
   object-fit: contain;
@@ -30,6 +33,18 @@
   box-shadow: 0 0 15px #00ff88;
   flex-shrink: 0;
   z-index: 1;
+  background-color: black;
+}
+
+.small-image {
+  max-height: 180px; /* más chica que carousel-image */
+  width: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00ff88;
+  flex-shrink: 0;
+  z-index: 1;
+  background-color: black;
 }
 
 .carousel-buttons {
@@ -64,7 +79,7 @@
 .modal-text {
   flex: 1;
   color: #00ff88;
-  font-size: 1rem;
+  font-size: 1.1rem; /* texto un poco más grande */
   line-height: 1.6;
   overflow-y: auto;
   max-height: 100%;
@@ -79,7 +94,9 @@
     height: auto;
   }
 
-  .carousel-image {
+  .carousel-image,
+  .carousel-video,
+  .small-image {
     width: 100%;
     height: auto;
   }
@@ -99,14 +116,16 @@
     padding: 0;
   }
 
-  .carousel-image {
+  .carousel-image,
+  .carousel-video,
+  .small-image {
     width: 90%;
     max-height: 260px;
   }
 
   .modal-text {
     padding: 0 10px;
-    font-size: 0.95rem;
+    font-size: 1rem;
     text-align: center;
   }
 }
@@ -124,14 +143,16 @@
   }
 
   .modal-text {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     line-height: 1.5;
   }
 }
 
 /* Responsive celular chico */
 @media (max-width: 480px) {
-  .carousel-image {
+  .carousel-image,
+  .carousel-video,
+  .small-image {
     max-height: 200px;
     width: 100%;
   }

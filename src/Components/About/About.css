@@ -4,7 +4,7 @@
   background-color: #0a0a0a;
   color: #00ff88;
   text-align: center;
-  box-sizing: border-box; /* para que el padding no agregue ancho extra */
+  box-sizing: border-box;
 }
 
 .about-title {
@@ -23,7 +23,7 @@
   flex-wrap: wrap;
   gap: 40px;
   margin-top: 30px;
-  max-width: 1200px; /* limita un poco para que no quede demasiado estirado */
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 20px;
@@ -44,7 +44,7 @@
   text-align: left;
 }
 
-/* Responsive */
+/* Responsive tablet y celular */
 @media (max-width: 768px) {
   .about-content {
     flex-direction: column;
@@ -60,5 +60,22 @@
   .about-text {
     max-width: 100%;
     font-size: 16px;
+    text-align: center;
+  }
+}
+
+/* Responsive celulares chicos (menos de 480px) */
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 28px;
+  }
+
+  .about-text {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .about-container {
+    padding: 40px 10px;
   }
 }
