@@ -151,3 +151,15 @@
     gap: 20px;
   }
 }
+
+.modal-text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-text li {
+  margin-bottom: 5px;
+  color: #00ff88;
+}
