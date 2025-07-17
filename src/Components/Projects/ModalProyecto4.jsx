@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import proyecto4_img1 from '../../assets/proyecto4_img1.png';
 import proyecto4_img2 from '../../assets/proyecto4_img2.png';
-import './proyecto3Carousel.css'; // reutilizamos los estilos del carousel
+import './ModalProyecto3.css'; // reutilizamos los estilos del carousel
 
 const ModalProyecto4 = ({ description }) => {
   const images = [proyecto4_img1, proyecto4_img2];

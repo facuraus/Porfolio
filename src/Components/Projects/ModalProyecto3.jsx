@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import proyecto3_img1 from '../../assets/proyecto3_img1.png';
 import proyecto3_img2 from '../../assets/proyecto3_img2.png';
-import './proyecto3Carousel.css';
+import './ModalProyecto3.css';
 
 const Proyecto3Carousel = ({ description }) => {
   const images = [proyecto3_img1, proyecto3_img2];

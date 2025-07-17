@@ -25,9 +25,14 @@ const Proyecto5Carousel = () => {
             </div>
             <div className="modal-text">
                 <p>
-                    En este proyecto se realizó un análisis profundo de las preferencias individuales en distintas áreas como deportes, música, noticias y ciencia, con el fin de identificar patrones comunes entre grupos de personas. Para ello, se aplicaron técnicas avanzadas de clustering basadas en árboles generadores mínimos, que permiten encontrar la estructura de conexiones más eficiente entre los individuos, minimizando la distancia total entre ellos.
+                    En este proyecto se realizó un análisis profundo de las preferencias individuales en distintas áreas como 
+                    deportes, música, noticias y ciencia, con el fin de identificar patrones comunes entre grupos de personas. 
+                    Para ello, se aplicaron técnicas avanzadas de clustering basadas en árboles generadores mínimos, que permiten 
+                    encontrar la estructura de conexiones más eficiente entre los individuos, minimizando la distancia total entre 
+                    ellos.
 
-                    Este enfoque no supervisado posibilita descubrir agrupamientos naturales sin necesidad de etiquetas previas, facilitando la interpretación visual de los resultados y la identificación de comunidades de intereses similares.
+                    Este enfoque no supervisado posibilita descubrir agrupamientos naturales sin necesidad de etiquetas previas, 
+                    facilitando la interpretación visual de los resultados y la identificación de comunidades de intereses similares.
                 </p>
             </div>
         </div>

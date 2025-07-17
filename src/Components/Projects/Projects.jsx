@@ -9,8 +9,9 @@ import proyecto4Img from '../../assets/proyecto4.jpg';
 import proyecto5_img1 from '../../assets/Clustering-humano.png';
 import videoPresentacion from '../../assets/SIGRH+_EL_FUTURO_DEL_RECLUTAMIENTO.mp4';
 
-import Proyecto3Carousel from './Proyecto3Carousel';
+import ModalProyecto1 from './ModalProyecto1';
 import ModalProyecto2 from './ModalProyecto2';
+import ModalProyecto3 from './ModalProyecto3';
 import ModalProyecto4 from './ModalProyecto4';
 import ModalProyecto5 from './ModalProyecto5';
 
@@ -116,29 +117,22 @@ const Projects = () => {
 
             {!showVideo && (
               <>
-                {activeProject.id === 2 ? (
+                {activeProject.id === 1 ? (
+                  <ModalProyecto1
+                    image={activeProject.image}
+                    description={activeProject.description}
+                    video={activeProject.video}
+                    handleShowVideo={handleShowVideo}
+                  />
+                ) : activeProject.id === 2 ? (
                   <ModalProyecto2 description={activeProject.description} />
                 ) : activeProject.id === 3 ? (
-                  <Proyecto3Carousel description={activeProject.extra} />
+                  <ModalProyecto3 description={activeProject.extra} />
                 ) : activeProject.id === 4 ? (
                   <ModalProyecto4 description={activeProject.description} />
                 ) : activeProject.id === 5 ? (
                   <ModalProyecto5 />
-                ) : (
-                  <>
-                    <img
-                      src={activeProject.image}
-                      alt={activeProject.title}
-                      className="modal-image"
-                    />
-                    <p>{activeProject.description}</p>
-                    {activeProject.video && (
-                      <button className="video-btn" onClick={handleShowVideo}>
-                        Ver Video: SIGRH+ EL FUTURO DEL RECLUTAMIENTO
-                      </button>
-                    )}
-                  </>
-                )}
+                ) : null}
               </>
             )}
 
