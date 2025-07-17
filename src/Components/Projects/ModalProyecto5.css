@@ -1,13 +1,17 @@
 .modal-custom-content {
   display: flex;
-  gap: 40px;
   flex-direction: row;
+  gap: 40px;
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: nowrap;
   margin-top: 20px;
   text-align: left;
-  height: 450px;
+  max-height: 80vh; /* reemplaza height fija */
+  overflow-y: auto;
+  position: relative;
+  padding-right: 10px; /* espacio para scrollbar */
+  box-sizing: border-box;
 }
 
 .carousel {
@@ -71,6 +75,18 @@
   padding-left: 10px;
 }
 
+.modal-text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-text li {
+  margin-bottom: 5px;
+  color: #00ff88;
+}
+
 /* Tablet y mobile */
 @media (max-width: 1000px) {
   .modal-custom-content {
@@ -123,14 +139,26 @@
   }
 }
 
-.modal-text ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+/* Botón de cerrar */
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: transparent;
+  border: none;
+  font-size: 32px;
+  color: #00ff88;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
 }
 
-.modal-text li {
-  margin-bottom: 5px;
-  color: #00ff88;
+/* Ajuste para pantallas grandes */
+@media (min-width: 1200px) {
+  .modal-close {
+    font-size: 36px;
+    top: 24px;
+    right: 24px;
+  }
 }
