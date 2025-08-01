@@ -102,9 +102,9 @@
 }
 
 /* Responsive celular */
-@media (max-width: 768px) {
+@media (max-width: 868px) {
   .modal-custom-content {
-    max-width: 95vw;       /* ancho máximo relativo a viewport */
+    max-width: 105vw;       /* ancho máximo relativo a viewport */
     margin: 20px auto;     /* centrar con margen arriba/abajo */
     padding: 15px 10px;    /* espacio interno para no pegarse */
   }
