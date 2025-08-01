@@ -26,7 +26,7 @@ const Proyecto3Carousel = () => {
 
       <div className="modal-text">
         <p><strong>Portal de Micro-Emprendimientos Comunitarios</strong></p>
-        
+
         <p>
           Consistió en el diseño y prototipo de un sistema web orientado a facilitar la visibilidad de micro-emprendimientos impulsados por miembros de una comunidad organizada.
         </p>

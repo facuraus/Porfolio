@@ -7,17 +7,17 @@
   flex-wrap: nowrap;
   margin-top: 20px;
   text-align: left;
-  max-height: 80vh; /* Permite scroll si hay mucho contenido */
+  max-height: 80vh;
   overflow-y: auto;
   position: relative;
-  padding-right: 10px; /* Espacio para el scrollbar */
+  padding-right: 10px;
   box-sizing: border-box;
 }
 
 .carousel {
   flex: 1;
   display: flex;
-  flex-direction: column; /* imagen arriba, botones abajo */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
@@ -75,6 +75,40 @@
   padding-left: 10px;
 }
 
+.modal-text ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-text li {
+  margin-bottom: 5px;
+  color: #00ff88;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: transparent;
+  border: none;
+  font-size: 32px;
+  color: #00ff88;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+@media (min-width: 1200px) {
+  .modal-close {
+    font-size: 36px;
+    top: 24px;
+    right: 24px;
+  }
+}
+
 /* Responsive general */
 @media (max-width: 1000px) {
   .modal-custom-content {
@@ -104,9 +138,9 @@
 /* Responsive celular */
 @media (max-width: 868px) {
   .modal-custom-content {
-    max-width: 105vw;       /* ancho máximo relativo a viewport */
-    margin: 20px auto;     /* centrar con margen arriba/abajo */
-    padding: 15px 10px;    /* espacio interno para no pegarse */
+    max-width: 105vw;
+    margin: 20px auto;
+    padding: 15px 10px;
   }
 
   .carousel-buttons {
@@ -130,10 +164,11 @@
   .modal-custom-content {
     max-width: 98vw;
     padding: 10px 5px;
+    gap: 60px;
   }
 
   .carousel-image {
-    max-height: 100px;
+    max-height: 180px;
     width: 100%;
   }
 
@@ -146,45 +181,5 @@
   .modal-text {
     padding: 0 5px;
     font-size: 0.85rem;
-  }
-
-  .modal-custom-content {
-    gap: 60px;
-  }
-}
-
-.modal-text ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.modal-text li {
-  margin-bottom: 5px;
-  color: #00ff88;
-}
-
-/* Botón de cerrar (cruz) */
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 9999;
-  background: transparent;
-  border: none;
-  font-size: 32px;
-  color: #00ff88;
-  cursor: pointer;
-  padding: 0;
-  line-height: 1;
-}
-
-/* Ajustes para pantallas grandes */
-@media (min-width: 1200px) {
-  .modal-close {
-    font-size: 36px;
-    top: 24px;
-    right: 24px;
   }
 }
