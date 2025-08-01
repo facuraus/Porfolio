@@ -31,7 +31,7 @@ const projectsData = [
   },
   {
     id: 3,
-    title: 'Portal de Micro-Emprendimientos',
+    title: 'Portal de Emprendimientos',
     description: '',
     image: proyecto3_img1,
     extra:
