@@ -1,15 +1,14 @@
-// src/Components/Projects/ModalProyecto2.jsx
 import React, { useState } from 'react';
 import crearGrafoImg from '../../assets/crear-grafo-goloso.png';
 import estadisticasImg from '../../assets/estadisticas-goloso.png';
 import gifGoloso from '../../assets/Algoritmo-Goloso-Gif.gif';
 import './ModalProyecto2.css';
 
-const ModalProyecto2 = ({ description }) => {
+const ModalProyecto2 = () => {
   const slides = [
     { type: 'image', src: crearGrafoImg, alt: 'Crear grafo goloso' },
     { type: 'image', src: estadisticasImg, alt: 'Estadísticas goloso' },
-    { type: 'image', src: gifGoloso, alt: 'GIF Algoritmo Goloso' }, // ahora se trata como imagen
+    { type: 'image', src: gifGoloso, alt: 'GIF Algoritmo Goloso' },
   ];
 
   const [index, setIndex] = useState(0);
@@ -27,54 +26,44 @@ const ModalProyecto2 = ({ description }) => {
             slides[index].alt === 'Estadísticas goloso' ? 'small-image' : 'carousel-image'
           }
         />
-
         <div className="carousel-buttons">
-          <button onClick={prev} className="carousel-btn" aria-label="Imagen anterior">
-            ‹
-          </button>
-          <button onClick={next} className="carousel-btn" aria-label="Imagen siguiente">
-            ›
-          </button>
+          <button onClick={prev} className="carousel-btn" aria-label="Imagen anterior">‹</button>
+          <button onClick={next} className="carousel-btn" aria-label="Imagen siguiente">›</button>
         </div>
       </div>
 
       <div className="modal-text">
+        <p><strong>Conjunto Dominante Mínimo</strong></p>
         <p>
-          <strong>Descripción del proyecto:</strong><br />
-          Como parte del Trabajo Práctico de la Universidad Nacional de General Sarmiento,
-          desarrollé una aplicación para resolver el problema del conjunto dominante mínimo en grafos. Este problema consiste en encontrar
-          un subconjunto de vértices tal que todos los vértices
-          restantes estén conectados (adyacentes) al menos a un vértice de dicho conjunto. El objetivo es minimizar la cantidad de
-          vértices en este conjunto.
+          El objetivo fue diseñar una aplicación para resolver el problema del conjunto dominante mínimo en grafos, 
+          utilizando un enfoque goloso (greedy) y representaciones gráficas para facilitar la comprensión del resultado.
+        </p>
+        <p>
+          Un conjunto dominante es un subconjunto de vértices tal que todos los vértices del grafo están en él o son adyacentes 
+          a al menos uno de sus elementos. La meta es encontrar el conjunto más pequeño posible.
         </p>
 
         <br />
 
-        <p>
-          <strong>Solución implementada:</strong><br />
-          Se diseñó un algoritmo goloso (greedy) que, dada una instancia del grafo, intenta encontrar un conjunto dominante de
-          tamaño reducido.
-        </p>
+        <p><strong>Algoritmo implementado:</strong></p>
+        <ul>
+          <li>Algoritmo goloso que selecciona vértices según su grado para cubrir el grafo de forma eficiente.</li>
+          <li>Comparación con una solución alternativa basada en backtracking para evaluar la calidad del resultado.</li>
+        </ul>
 
-        <br />
-        
-        <p>
-          <strong>La aplicación permite dos modalidades de carga del grafo:</strong>
-          <ul>
-            <li>Interfaz gráfica que permite agregar vértices y aristas manualmente.</li>
-            <li>Lectura de grafos desde archivos de texto plano o JSON, facilitando la reutilización de instancias.</li>
-          </ul>
-        </p>
+        <p><strong>Tecnologías utilizadas:</strong></p>
+        <ul>
+          <li><strong>Java (backend):</strong> lógica del algoritmo y representación del grafo.</li>
+          <li><strong>HTML y CSS (frontend):</strong> interfaz gráfica para ingresar datos y visualizar los resultados.</li>
+        </ul>
 
-        <br />
-
-        <p>
-          <strong>Funcionalidades adicionales:</strong>
-          <ul>
-            <li>Visualización del grafo y del conjunto dominante encontrado mediante gráficos interactivos.</li>
-            <li>Comparación con una solución alternativa utilizando backtracking, permitiendo evaluar la calidad del resultado frente a un enfoque más exhaustivo.</li>
-          </ul>
-        </p>
+        <p><strong>Funcionalidades principales:</strong></p>
+        <ul>
+          <li>Creación manual del grafo agregando vértices y aristas desde la interfaz.</li>
+          <li>Importación de grafos desde archivos JSON o texto plano.</li>
+          <li>Visualización del grafo y del conjunto dominante obtenido.</li>
+          <li>Estadísticas sobre la solución encontrada y comparación con backtracking.</li>
+        </ul>
       </div>
     </div>
   );

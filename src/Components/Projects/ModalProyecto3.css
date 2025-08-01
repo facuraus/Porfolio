@@ -79,7 +79,7 @@
 @media (max-width: 1000px) {
   .modal-custom-content {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     height: auto;
     gap: 30px;
   }
@@ -97,12 +97,18 @@
   .modal-text {
     padding: 0 10px;
     font-size: 0.95rem;
-    text-align: center;
+    text-align: left;
   }
 }
 
 /* Responsive celular */
 @media (max-width: 768px) {
+  .modal-custom-content {
+    max-width: 95vw;       /* ancho máximo relativo a viewport */
+    margin: 20px auto;     /* centrar con margen arriba/abajo */
+    padding: 15px 10px;    /* espacio interno para no pegarse */
+  }
+
   .carousel-buttons {
     gap: 15px;
   }
@@ -121,8 +127,13 @@
 
 /* Responsive celular chico */
 @media (max-width: 480px) {
+  .modal-custom-content {
+    max-width: 98vw;
+    padding: 10px 5px;
+  }
+
   .carousel-image {
-    max-height: 200px;
+    max-height: 100px;
     width: 100%;
   }
 

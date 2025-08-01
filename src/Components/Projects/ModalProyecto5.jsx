@@ -24,40 +24,30 @@ const Proyecto5Carousel = () => {
                 </div>
             </div>
             <div className="modal-text">
-                <p><strong>Clustering Humano por Intereses – (Programación III – UNGS)</strong></p>
+                <p><strong>Clustering Humano por Intereses</strong></p>
                 <p>
-                    Este proyecto fue desarrollado como Trabajo Práctico en la Universidad Nacional de General Sarmiento. 
-                    El objetivo fue construir una aplicación interactiva para identificar automáticamente grupos de personas con 
-                    intereses similares en distintas áreas temáticas.
+                    El objetivo fue construir una aplicación que permita agrupar personas en función de sus intereses mediante 
+                    algoritmos de grafos, 
+                    combinando Java para la lógica del algoritmo y HTML/CSS para la interfaz web.
                 </p>
                 <p>
-                    A partir de una lista de personas y sus niveles de interés (valores del 1 al 5) en deportes, música, 
-                    espectáculos y ciencia, se aplicó un algoritmo basado en clustering utilizando técnicas de grafos.
+                    Cada persona es ingresada con un valor del 1 al 5 en cuatro categorías: deportes, música, espectáculos y ciencia. 
+                    A partir de estos datos, se construye un grafo completo con aristas ponderadas según un índice de similaridad.
                 </p>
 
                 <br />
 
-                <p><strong>Funcionamiento del algoritmo:</strong></p>
+                <p><strong>Algoritmo implementado:</strong></p>
                 <ul>
-                    <li>Se construye un grafo completo donde cada nodo representa a una persona.</li>
-                    <li>Las aristas entre personas se ponderan según un índice de similaridad, calculado como la suma de las diferencias absolutas en cada interés.</li>
-                    <li>Se genera un árbol generador mínimo (MST) del grafo.</li>
-                    <li>Se elimina la arista de mayor peso del árbol, dividiendo así el grafo en dos grupos de personas con intereses similares.</li>
-                </ul>
-
-                
-                <p><strong>Funcionalidades implementadas:</strong></p>
-                <ul>
-                    <li>Carga interactiva de personas y sus intereses mediante una interfaz gráfica intuitiva.</li>
-                    <li>Visualización de los grupos formados tras ejecutar el algoritmo.</li>
-                    <li>Botón de acción para lanzar el proceso de clustering y ver resultados en pantalla.</li>
+                    <li>Construcción del grafo completo con cada persona como nodo.</li>
+                    <li>Cálculo del Árbol Generador Mínimo (MST) utilizando el algoritmo de Prim.</li>
+                    <li>Eliminación de la arista de mayor peso para dividir el grafo en dos componentes conexas.</li>
                 </ul>
 
                 <p><strong>Tecnologías utilizadas:</strong></p>
                 <ul>
-                    <li>Python para la lógica del algoritmo (estructura de grafos y MST).</li>
-                    <li>Tkinter / PyQt para la interfaz gráfica.</li>
-                    <li>Estructuras como listas de adyacencia y algoritmos clásicos como Prim o Kruskal para el MST.</li>
+                    <li><strong>Java (backend):</strong> lógica del algoritmo, estructuras de datos y procesamiento.</li>
+                    <li><strong>HTML y CSS (frontend):</strong> interfaz web para ingresar personas y visualizar los grupos resultantes.</li>
                 </ul>
             </div>
         </div>

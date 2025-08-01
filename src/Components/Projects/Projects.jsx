@@ -18,21 +18,21 @@ import ModalProyecto5 from './ModalProyecto5';
 const projectsData = [
   {
     id: 1,
-    title: 'Proyecto 1',
-    description: 'Este es un proyecto interesante que desarrolla funcionalidades clave en React.',
+    title: 'SIGRH+',
+    description: '',
     image: proyecto1Img,
     video: videoPresentacion,
   },
   {
     id: 2,
-    title: 'Proyecto 2',
-    description: 'Proyecto con backend en Node.js y base de datos MongoDB para gestión eficiente.',
+    title: 'Conjunto Dominante Mínimo',
+    description: '',
     image: proyecto2Img,
   },
   {
     id: 3,
-    title: 'Proyecto 3',
-    description: 'Aplicación móvil creada con React Native, optimizada para usabilidad y rendimiento.',
+    title: 'Portal de Micro-Emprendimientos',
+    description: '',
     image: proyecto3_img1,
     extra:
       'Este proyecto fue una app móvil pensada para facilitar tareas cotidianas, utilizando React Native. Implementa navegación entre pantallas con React Navigation y gestión de estados globales con Redux Toolkit. También se enfocó en la experiencia de usuario con diseño responsive y accesible.',
@@ -40,14 +40,14 @@ const projectsData = [
   },
   {
     id: 4,
-    title: 'Proyecto 4',
-    description: 'Proyecto 4 con funcionalidades innovadoras y tecnologías modernas para soluciones eficientes.',
+    title: 'Lights Out',
+    description: '',
     image: proyecto4Img,
   },
   {
     id: 5,
-    title: 'Proyecto 5',
-    description: 'Clustering no supervisado con análisis visual de agrupamientos.',
+    title: 'Clustering Humano',
+    description: '',
     image: proyecto5_img1,
   },
 ];

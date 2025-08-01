@@ -27,13 +27,16 @@
 /* ----------- MOBILE ADAPTATION ----------- */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
+    /* puedes mantener el margin que quieras */
     margin: 10px 20px;
   }
 
   .navbar-list {
-    flex-direction: column;
+    /* mantén el flex-direction en fila (row) */
+    flex-direction: row;
     gap: 20px;
     font-size: 18px;
+    flex-wrap: wrap; /* para que si no entran, se ajusten en más filas */
+    justify-content: center;
   }
 }

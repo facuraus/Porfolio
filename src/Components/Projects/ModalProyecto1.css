@@ -1,5 +1,3 @@
-/* src/Components/Projects/ModalProyecto2.css */
-
 .modal-custom-content {
   display: flex;
   gap: 40px;
@@ -72,6 +70,30 @@
 }
 
 .carousel-btn:hover {
+  background-color: #00cc66;
+  color: white;
+}
+
+/* Botón específico para el video (más ancho y con padding) */
+.video-btn {
+  background-color: #00ff88;
+  color: #0a0a0a;
+  border: none;
+  border-radius: 8px; /* esquinas redondeadas */
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00ff88;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.video-btn:hover {
   background-color: #00cc66;
   color: white;
 }

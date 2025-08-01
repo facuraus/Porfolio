@@ -59,12 +59,12 @@
   font-size: 1.5rem;
   margin-bottom: 12px;
   text-align: center;
-  width: 320px; /* igual al ancho de la tarjeta */
+  /* No width para que no dependa de la imagen */
 }
 
 .project-card {
   position: relative;
-  width: 320px;
+  width: 320px; /* ancho fijo para todos */
   height: 220px;
   border-radius: 15px;
   overflow: hidden;
@@ -76,7 +76,6 @@
   cursor: pointer;
   transition: transform 0.3s ease;
   z-index: 2;
-  /* padding-top eliminado */
 }
 
 .project-card:hover {
@@ -120,8 +119,7 @@
   color: white;
 }
 
-/* Resto del CSS modal y responsive igual al que ya tenías */
-
+/* Modal */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -192,20 +190,15 @@
 }
 
 /* Responsive */
+
 @media (max-width: 1000px) {
   .projects-container {
     gap: 20px;
   }
 
   .project-card {
-    width: 90vw;
-    max-width: 320px;
+    width: 320px;
     height: 200px;
-  }
-
-  .project-title {
-    width: 90vw;
-    max-width: 320px;
   }
 }
 
@@ -226,7 +219,7 @@
   }
 
   .project-card {
-    width: 95%;
+    width: 320px;
     height: 200px;
   }
 
@@ -256,14 +249,29 @@
   .modal-video {
     max-height: 300px;
   }
-
-  .project-title {
-    width: 95%;
-    max-width: 320px;
-  }
 }
 
 @media (max-width: 480px) {
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .project-card {
+    width: 320px; /* ancho fijo igual que siempre */
+    height: 220px;
+  }
+
+  /* Para que entren 2 por fila, el contenedor debe tener suficiente espacio horizontal y el gap no muy grande */
+
+  .project-title {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    width: 100%;
+  }
+
   .projects-title {
     font-size: 1.6rem;
   }
