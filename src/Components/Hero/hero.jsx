@@ -3,7 +3,7 @@ import fotoCV from '../../assets/foto-cv.png';
 import { FiDownload } from 'react-icons/fi';
 import { FaLinkedin, FaGithub } from 'react-icons/fa'; // Importamos los iconos
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-
+import miCV from '../../assets/CV-Facundo-Rauschenberger-2026.pdf';
 const Hero = () => {
   return (
     <div id="hero" className='hero'>
@@ -24,15 +24,15 @@ const Hero = () => {
         <span>Soy Facundo Rauschenberger,</span> Software Developer.
       </h1>
       <p className='hero-subtitle'>
-        Cuento con experiencia en el desarrollo integral de aplicaciones y la escritura de código eficiente para garantizar 
-        la entrega de productos confiables y con alto rendimiento. Me apasiona la calidad del software y el trabajo en equipo 
+        Cuento con experiencia en el desarrollo integral de aplicaciones y la escritura de código eficiente para garantizar
+        la entrega de productos confiables y con alto rendimiento. Me apasiona la calidad del software y el trabajo en equipo
         para mejorar continuamente los procesos de desarrollo.
       </p>
       <div className="hero-action">
         <AnchorLink href="#contact" className="hero-contacto">
           Contactarme
         </AnchorLink>
-        <a href="/CV-Facundo-Rauschenberger.pdf" download className="hero-CV">
+        <a href={miCV} download="CV-Facundo-Rauschenberger-2026.pdf" className="hero-CV">
           Descargar Mi CV
         </a>
       </div>
