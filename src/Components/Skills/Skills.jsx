@@ -7,9 +7,9 @@ import {
   FaJsSquare,
   FaReact,
   FaGitAlt,
-  FaDatabase,
-  FaProjectDiagram,
-  FaMicrochip,
+  FaNodeJs,
+  FaJira,
+  FaAndroid,
 } from 'react-icons/fa';
 import {
   SiPostgresql,
@@ -17,7 +17,7 @@ import {
   SiApachecassandra,
   SiPostman,
 } from 'react-icons/si';
-import './Skills.css';
+import { DiScrum } from 'react-icons/di'; 
 
 const skillCategories = [
   {
@@ -26,18 +26,23 @@ const skillCategories = [
       { name: 'HTML', icon: <FaHtml5 color="#E34F26" /> },
       { name: 'CSS', icon: <FaCss3Alt color="#1572B6" /> },
       { name: 'JavaScript', icon: <FaJsSquare color="#F7DF1E" /> },
-      { name: 'React', icon: <FaReact color="#61DAFB" /> },
+      { name: 'React JS', icon: <FaReact color="#61DAFB" /> },
     ],
   },
   {
     category: 'Back-end',
     skills: [
+      { name: 'Node.js', icon: <FaNodeJs color="#339933" /> },
       { name: 'Java', icon: <FaJava color="#007396" /> },
       { name: 'Python', icon: <FaPython color="#3776AB" /> },
-      { name: 'Assembler', icon: <FaMicrochip color="#888" /> },
-      { name: 'Scrum', icon: <FaProjectDiagram color="#3f51b5" /> },
       { name: 'Postman', icon: <SiPostman color="#FF6C37" /> },
-      { name: 'Git', icon: <FaGitAlt color="#F05032" /> },
+    ],
+  },
+  {
+    category: 'Mobile',
+    skills: [
+      { name: 'React Native', icon: <FaReact color="#61DAFB" /> },
+      { name: 'Android Studio', icon: <FaAndroid color="#3DDC84" /> },
     ],
   },
   {
@@ -46,6 +51,14 @@ const skillCategories = [
       { name: 'Postgres', icon: <SiPostgresql color="#336791" /> },
       { name: 'MongoDB', icon: <SiMongodb color="#4DB33D" /> },
       { name: 'Apache Cassandra', icon: <SiApachecassandra color="#1283A2" /> },
+    ],
+  },
+  {
+    category: 'Gestión y Herramientas',
+    skills: [
+      { name: 'Git', icon: <FaGitAlt color="#F05032" /> },
+      { name: 'Scrum', icon: <DiScrum color="#51A0D5" /> },      
+      { name: 'Jira', icon: <FaJira color="#0052CC" /> },
     ],
   },
 ];

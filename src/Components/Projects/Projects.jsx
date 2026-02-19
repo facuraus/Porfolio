@@ -1,100 +1,39 @@
 import React, { useState } from 'react';
 import './Projects.css';
-
-import proyecto1Img from '../../assets/SIGRH+.png';
-import proyecto3_img1 from '../../assets/proyecto3_img1.png';
-import proyecto3_img2 from '../../assets/proyecto3_img2.png';
-import proyecto2Img from '../../assets/proyecto2.jpg';
-import proyecto4Img from '../../assets/proyecto4.jpg';
-import proyecto5_img1 from '../../assets/Clustering-humano.png';
-import videoPresentacion from '../../assets/SIGRH+_EL_FUTURO_DEL_RECLUTAMIENTO.mp4';
-
-import ModalProyecto1 from './ModalProyecto1';
-import ModalProyecto2 from './ModalProyecto2';
-import ModalProyecto3 from './ModalProyecto3';
-import ModalProyecto4 from './ModalProyecto4';
-import ModalProyecto5 from './ModalProyecto5';
-
-const projectsData = [
-  {
-    id: 1,
-    title: 'SIGRH+',
-    description: '',
-    image: proyecto1Img,
-    video: videoPresentacion,
-  },
-  {
-    id: 2,
-    title: 'Conjunto Dominante Mínimo',
-    description: '',
-    image: proyecto2Img,
-  },
-  {
-    id: 3,
-    title: 'Portal de Emprendimientos',
-    description: '',
-    image: proyecto3_img1,
-    extra:
-      'Este proyecto fue una app móvil pensada para facilitar tareas cotidianas, utilizando React Native. Implementa navegación entre pantallas con React Navigation y gestión de estados globales con Redux Toolkit. También se enfocó en la experiencia de usuario con diseño responsive y accesible.',
-    images: [proyecto3_img1, proyecto3_img2],
-  },
-  {
-    id: 4,
-    title: 'Lights Out',
-    description: '',
-    image: proyecto4Img,
-  },
-  {
-    id: 5,
-    title: 'Clustering Humano',
-    description: '',
-    image: proyecto5_img1,
-  },
-];
+import { proyectosData } from './proyectData'; 
+import ProjectModal from './ProjectModal'; 
 
 const Projects = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [activeProject, setActiveProject] = useState(null);
-  const [showVideo, setShowVideo] = useState(false);
 
   const openModal = (project) => {
     setActiveProject(project);
-    setShowVideo(false);
     setModalOpen(true);
   };
 
   const closeModal = () => {
     setModalOpen(false);
     setActiveProject(null);
-    setShowVideo(false);
-  };
-
-  const handleShowVideo = () => {
-    setShowVideo(true);
   };
 
   return (
-    <>
-      <div id="works" className="projects-wrapper">
-        <h2 className="projects-title">Mis Proyectos</h2>
-        <div className="projects-container">
-          {projectsData.map((project) => (
-            <div
-              key={project.id}
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                marginBottom: '30px',
-              }}
-            >
-              <h3 className="project-title">{project.title}</h3>
-              <div className="project-card">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="project-image"
-                />
+    <section id="works" className="projects-wrapper">
+      <h2 className="projects-title">Mis Proyectos</h2>
+      
+      <div className="projects-container">
+        {proyectosData.map((project) => (
+          <div key={project.id} className="project-item-wrapper">
+            <h3 className="project-title">{project.titulo}</h3>
+            
+            <div className="project-card">
+              <img
+                src={project.imagenes[0]?.src}
+                alt={project.titulo}
+                className="project-image"
+              />
+              {/* El botón ahora vive dentro de la card y aparece al hacer hover */}
+              <div className="project-overlay">
                 <button
                   className="project-btn"
                   onClick={() => openModal(project)}
@@ -103,54 +42,16 @@ const Projects = () => {
                 </button>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
 
-      {modalOpen && activeProject && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeModal}>
-              ×
-            </button>
-            <h2>{activeProject.title}</h2>
-
-            {!showVideo && (
-              <>
-                {activeProject.id === 1 ? (
-                  <ModalProyecto1
-                    image={activeProject.image}
-                    description={activeProject.description}
-                    video={activeProject.video}
-                    handleShowVideo={handleShowVideo}
-                  />
-                ) : activeProject.id === 2 ? (
-                  <ModalProyecto2 description={activeProject.description} />
-                ) : activeProject.id === 3 ? (
-                  <ModalProyecto3 description={activeProject.extra} />
-                ) : activeProject.id === 4 ? (
-                  <ModalProyecto4 description={activeProject.description} />
-                ) : activeProject.id === 5 ? (
-                  <ModalProyecto5 />
-                ) : null}
-              </>
-            )}
-
-            {showVideo && activeProject.video && (
-              <>
-                <h3>SIGRH+ EL FUTURO DEL RECLUTAMIENTO</h3>
-                <video
-                  src={activeProject.video}
-                  controls
-                  autoPlay
-                  className="modal-video"
-                />
-              </>
-            )}
-          </div>
-        </div>
-      )}
-    </>
+      <ProjectModal 
+        isOpen={modalOpen} 
+        proyecto={activeProject} 
+        onClose={closeModal} 
+      />
+    </section>
   );
 };
 

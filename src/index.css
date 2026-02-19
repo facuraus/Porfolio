@@ -1,11 +1,60 @@
-*{
-    margin: 0;
-    padding: 0;
+/* Importamos una fuente más moderna y legible si prefieres variar de 'outfit' */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+    /* MODO OSCURO PROFESIONAL (Default) */
+    --bg-color: #0f172a;           /* Azul medianoche profundo */
+    --bg-secondary: #1e293b;       /* Azul grisáceo para cards */
+    --accent-color: #3b82f6;       /* Azul eléctrico (confianza) */
+    --accent-glow: rgba(59, 130, 246, 0.5);
+    --text-primary: #f8fafc;       /* Blanco suave */
+    --text-secondary: #94a3b8;     /* Gris para descripciones */
+    --nav-bg: rgba(15, 23, 42, 0.8);
+    --border-color: rgba(255, 255, 255, 0.1);
 }
 
-body{
-    height: 100vh;
-    background: #161513;
-    color: white;
-    font-family: 'outfit';
+/* CLASE PARA MODO CLARO (Se activa desde el botón que creamos) */
+body.light-mode {
+    --bg-color: #f8fafc;           /* Fondo blanco/hielo muy limpio */
+    --bg-secondary: #ffffff;       /* Cards blancas puras */
+    --accent-color: #2563eb;       /* Azul más intenso */
+    --accent-glow: rgba(37, 99, 235, 0.2);
+    --text-primary: #0f172a;       /* Texto casi negro */
+    --text-secondary: #475569;     /* Gris oscuro */
+    --nav-bg: rgba(248, 250, 252, 0.8);
+    --border-color: rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif; /* Cambié a Inter por ser estándar en tech */
+    transition: background-color 0.4s ease, color 0.4s ease;
+    line-height: 1.6;
+}
+
+/* Estilo para que el scroll sea suave en toda la página */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Personalización de la barra de desplazamiento para que combine */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
 }

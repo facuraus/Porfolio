@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-import './Contact.css';
+//import './Contact.css';
 import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md';
 
 const Contacto = () => {
