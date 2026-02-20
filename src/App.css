@@ -159,6 +159,57 @@ body.light-mode .btn-enviar:hover {
 .navbar-link:hover, .navbar-link.active {
     color: var(--accent);
 }
+
+/* --- Estilos base del botón (oculto en desktop) --- */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: var(--accent);
+    cursor: pointer;
+    z-index: 1001; /* Por encima de la lista */
+}
+
+/* --- Ajustes Responsive --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Aparece en móvil */
+        position: absolute;
+        right: 20px;
+    }
+
+    .navbar-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        /* Posicionamiento */
+        position: fixed;
+        top: -100vh; /* Escondido arriba */
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Ocupa toda la pantalla */
+        
+        background-color: var(--nav-bg);
+        backdrop-filter: blur(15px);
+        transition: top 0.4s ease-in-out;
+        gap: 30px;
+    }
+
+    /* Clase que activa React */
+    .navbar-list.active {
+        top: 0; 
+    }
+
+    .navbar-link {
+        font-size: 1.5rem; /* Links más grandes para tocar con el dedo */
+    }
+
+    .theme-toggle {
+        font-size: 2rem;
+        margin-top: 10px;
+    }
+}
 /* ==========================================
    HERO (Centrado con Caja Social)
    ========================================== */
@@ -736,7 +787,6 @@ body.light-mode .skill-name {
 
 @media (max-width: 768px) {
     .hero-title { font-size: 2.2rem; }
-    .navbar-list { display: none; } /* Oculto para menú móvil */
     .about-content { flex-direction: column; }
     .about-text { text-align: center; }
     .category-box { width: 90%; min-height: auto; }
