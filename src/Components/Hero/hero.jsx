@@ -3,7 +3,7 @@ import fotoCV from '../../assets/foto-cv.png';
 import { FiDownload } from 'react-icons/fi';
 import { FaLinkedin, FaGithub } from 'react-icons/fa'; // Importamos los iconos
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import miCV from '../../assets/CV-Facundo-Rauschenberger-2026.pdf';
+import miCV from '../../assets/CV-Facundo-Rauschenberger-Marzo-2026.pdf';
 const Hero = () => {
   return (
     <div id="hero" className='hero'>
@@ -14,9 +14,9 @@ const Hero = () => {
           <a href="https://www.linkedin.com/in/facundo-rauschenberger-72593a25b/" target="_blank" rel="noopener noreferrer" className="social-link">
             <FaLinkedin />
           </a>
-          {/* <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" className="social-link">
+          <a href="https://github.com/Facundo-Rauschen" target="_blank" rel="noopener noreferrer" className="social-link">
             <FaGithub />
-          </a> */}
+          </a> 
         </div>
       </div>
 
@@ -32,7 +32,7 @@ const Hero = () => {
         <AnchorLink href="#contact" className="hero-contacto">
           Contactarme
         </AnchorLink>
-        <a href={miCV} download="CV-Facundo-Rauschenberger-2026.pdf" className="hero-CV">
+        <a href={miCV} download="CV-Facundo-Rauschenberger-Marzo-2026.pdf" className="hero-CV">
           Descargar Mi CV
         </a>
       </div>

@@ -4,24 +4,28 @@
 import proyecto1Img from '../../assets/SIGRH+.png';
 import videoPresentacion from '../../assets/SIGRH+_EL_FUTURO_DEL_RECLUTAMIENTO.mp4';
 
-// Proyecto 2: Conjunto Dominante Mínimo
-import crearGrafoImg from '../../assets/crear-grafo-goloso.png';
-import estadisticasImg from '../../assets/estadisticas-goloso.png';
-import gifGoloso from '../../assets/Algoritmo-Goloso-Gif.gif';
-import proyecto2Portada from '../../assets/proyecto2.jpg';
+// Proyecto 2: GeoDelivery
+import proyectoGeo_img1 from '../../assets/proyecto2_img1.png';
+import proyectoGeo_img2 from '../../assets/proyecto2_img2.png';
+import proyectoGeo_img3 from '../../assets/proyecto2_img3.png';
+import proyectoGeo_img4 from '../../assets/proyecto2_img4.png';
+import proyectoGeo_img5 from '../../assets/proyecto2_img5.png';
 
-// Proyecto 3: Micro-Emprendimientos
+
+// Proyecto 3: E-Commerce
 import proyecto3_img1 from '../../assets/proyecto3_img1.png';
 import proyecto3_img2 from '../../assets/proyecto3_img2.png';
+import proyecto3_img3 from '../../assets/proyecto3_img3.png';
+import proyecto3_img4 from '../../assets/proyecto3_img4.png';
+import proyecto3_img5 from '../../assets/proyecto3_img5.png';
 
-// Proyecto 4: Lights Out
-import proyecto4_img1 from '../../assets/proyecto4_img1.png';
-import proyecto4_img2 from '../../assets/proyecto4_img2.png';
-import proyecto4Portada from '../../assets/proyecto4.jpg';
 
-// Proyecto 5: Clustering Humano
-import clusteringHumano from '../../assets/Clustering-humano.png';
-import resultadosClustering from '../../assets/Resultados-Clustering.png';
+
+// Proyecto 4: SpotSport
+import proyectoSpot_img1 from '../../assets/proyectoSpot_img1.png';
+import proyectoSpot_img2 from '../../assets/proyectoSpot_img2.png';
+import proyectoSpot_img3 from '../../assets/proyectoSpot_img3.png';
+import proyectoSpot_img4 from '../../assets/proyectoSpot_img4.png';
 
 // --- ARRAY DE DATOS ---
 
@@ -32,6 +36,7 @@ export const proyectosData = [
     subtitulo: "El Futuro del Reclutamiento",
     imagenes: [{ src: proyecto1Img, alt: "Portada SIGRH+" }],
     videoUrl: videoPresentacion,
+    githubUrl: "https://github.com/Facundo-Rauschen/SIGRH-.git",
     cuerpo: {
       introduccion: "Presento SIGRH+, un sistema SaaS innovador para la gestión integral de recursos humanos que incorpora inteligencia artificial. Este proyecto fue el trabajo final de la Tecnicatura en Informática en la Universidad Nacional de General Sarmiento. En equipo desarrollamos una plataforma web que facilita y optimiza procesos como reclutamiento, evaluación de desempeño, gestión de licencias y encuestas internas, todo en un entorno seguro y escalable.",
       puntosClave: [
@@ -41,77 +46,87 @@ export const proyectosData = [
         "Chatbot potenciado por Llama 3 para comunicación interna y notificaciones vía Telegram.",
         "Reportes visuales interactivos y automatización de tareas administrativas."
       ],
-      miAporte: "Como desarrollador Full Stack, lideré la creación de la interfaz de usuario utilizando React y Tailwind CSS para una experiencia fluida. En el backend, diseñé y testeé la arquitectura de endpoints REST, asegurando una integración eficiente entre la lógica de negocio y el consumo de datos.", detallesTecnicos: "Backend en Python (Flask) con MySQL, desplegado en Railway usando Docker. El equipo siguió metodologías ágiles SCRUM con guía docente como Product Owners."
     },
     tecnologias: ["React", "Python", "Llama 3", "Tailwind CSS", "Docker"]
   },
   {
     id: 2,
-    titulo: "Conjunto Dominante Mínimo",
-    subtitulo: "Algoritmos Golosos y Heurísticas",
+    titulo: "GeoDelivery",
+    subtitulo: "Manual de Inteligencia Logística y Telemetría en Tiempo Real",
     imagenes: [
-      { src: proyecto2Portada, alt: "Portada Algoritmo" },
-      { src: gifGoloso, alt: "GIF Algoritmo Goloso" },
-      { src: crearGrafoImg, alt: "Creación de Grafos" },
-      { src: estadisticasImg, alt: "Estadísticas de Comparación" }
+      { src: proyectoGeo_img1, alt: "Panel de Control y Monitoreo de Flota" },
+      { src: proyectoGeo_img2, alt: "Radio de Puntos de entrega y depositos" },
+      { src: proyectoGeo_img3, alt: "Panel vehiculos" },
+      { src: proyectoGeo_img4, alt: "Panel depositos" },
+      { src: proyectoGeo_img5, alt: "Panel puntos de entrega" }
+
+
     ],
     videoUrl: null,
+    githubUrl: "https://github.com/Facundo-Rauschen/GeoDelivery.git",
     cuerpo: {
-      introduccion: "Diseñé una aplicación capaz de resolver el problema del conjunto dominante mínimo en grafos. El sistema permite encontrar el subconjunto más pequeño de vértices de tal manera que todos los demás vértices del grafo sean adyacentes a al menos uno de ellos.",
+      introduccion: "GeoDelivery es un ecosistema de última milla diseñado para transformar coordenadas estáticas en una operación logística dinámica. A diferencia de los sistemas tradicionales, utiliza motores de cálculo real, persistencia geográfica y geometría esférica para optimizar el movimiento de flotas en tiempo real.",
       puntosClave: [
-        "Implementación de un algoritmo goloso (greedy) que selecciona vértices según su grado para cubrir el grafo eficientemente.",
-        "Comparativa de rendimiento contra una solución de Backtracking para evaluar precisión vs. tiempo de ejecución.",
-        "Creación manual de grafos interactivos y soporte para importación vía JSON o texto plano.",
-        "Visualización dinámica del grafo y estadísticas detalladas de la solución encontrada."
+        "Motor de Enrutamiento OSRM: Cálculo de trayectorias sobre redes viales reales (OpenStreetMap) utilizando algoritmos MLD (Multi-Level Dijkstra).",
+        "Geofencing Automático: Implementación de la Fórmula de Haversine para detectar arribos y transiciones de estado sin intervención manual.",
+        "Infraestructura Geoespacial: Persistencia en PostgreSQL con la extensión PostGIS utilizando tipos GEOGRAPHY (POINT, 4326) para consultas espaciales nativas.",
+        "Telemetría en Vivo: Streaming de posiciones vehiculares mediante Socket.io y gestión de estados de alta disponibilidad con Redis Cache.",
+        "Arquitectura de Microservicios: Orquestación completa mediante Docker Stack (PostGIS, Redis, OSRM Argentina y Node.js)."
       ],
-      miAporte: "Desarrollé la lógica del algoritmo en el backend con Java, enfocándome en la eficiencia del procesamiento de grafos. En el frontend, construí la interfaz interactiva para la carga de datos y la visualización de resultados estadísticos.",
-      detallesTecnicos: "Stack: Java para la lógica algorítmica y representación de datos, con una interfaz web construida en HTML y CSS para facilitar la experimentación visual."
+      detallesTecnicos: "Stack: Node.js, React 18, PostgreSQL/PostGIS, Redis, Socket.io, OSRM y Docker. El sistema garantiza una experiencia de usuario de alta densidad informativa con Tailwind CSS y Lucide React."
     },
-    tecnologias: ["Java", "Algoritmos", "Grafos", "HTML", "CSS"]
+    tecnologias: ["PostGIS", "Docker", "Socket.io", "React", "Node.js", "Redis"]
   },
   {
     id: 3,
-    titulo: "Portal de Emprendimientos",
-    subtitulo: "Visibilidad de Micro-Emprendimientos Comunitarios",
+    titulo: "E-Commerce",
+    subtitulo: "Plataforma de Gestión de Ventas e Inventario en Tiempo Real",
     imagenes: [
-      { src: proyecto3_img1, alt: "Vista Principal Emprendimientos" },
-      { src: proyecto3_img2, alt: "Formulario de Registro" }
+      { src: proyecto3_img1, alt: "Vista Principal Productos" },
+      { src: proyecto3_img2, alt: "Panel de control" },
+      { src: proyecto3_img3, alt: "Vista del producto" },
+      { src: proyecto3_img4, alt: "Carrito" },
+      { src: proyecto3_img5, alt: "Historial de compras" }
     ],
     videoUrl: null,
+    githubUrl: "https://github.com/Facundo-Rauschen/E-Commerce.git",
     cuerpo: {
-      introduccion: "Diseñé y protocultivé un sistema web integral orientado a potenciar la visibilidad de micro-emprendimientos comunitarios. La plataforma permite a los emprendedores locales formalizar su presencia digital y conectar de manera eficiente con los miembros de su comunidad organizada.",
+      introduccion: "Desarrollé una plataforma integral de comercio electrónico que resuelve el ciclo completo de venta: desde la navegación persistente de productos hasta la finalización de compra con validación de stock y generación de tickets.",
       puntosClave: [
-        "Sistema de registro dinámico con validación de rubros, métodos de pago y zonas de cobertura.",
-        "Panel de moderación con flujo de aprobación de emprendimientos y notificaciones automáticas por correo.",
-        "Módulo de geolocalización para puntos físicos con gestión de privacidad de direcciones.",
-        "Pasarela de donaciones integrada con CuentaPago y PagoNet, vinculada a un sistema de 'Destacados'.",
-        "Automatización de reportes semanales y recordatorios de vencimiento para los administradores."
+        "Arquitectura robusta con Node.js y Express, utilizando el patrón de diseño por capas para mayor escalabilidad.",
+        "Sincronización bidireccional mediante WebSockets (Socket.io) para actualizaciones de stock y catálogo en tiempo real.",
+        "Sistema de Checkout avanzado que valida disponibilidad atómica y gestiona productos remanentes automáticamente.",
+        "Buscador dinámico con autocompletado (Live Search) y filtrado multidimensional por categorías, precios y disponibilidad.",
+        "Persistencia de datos en MongoDB Atlas con optimización de consultas mediante agregaciones y paginación (Mongoose Paginate V2)."
       ],
-      miAporte: "Me encargué del desarrollo del frontend utilizando HTML, CSS y JavaScript. Implementé toda la lógica de validación de formularios en el lado del cliente y diseñé la arquitectura de la interfaz para garantizar una experiencia de usuario (UX) intuitiva y responsiva.",
-      detallesTecnicos: "Stack: HTML5, CSS3 y JavaScript Vanilla. El proyecto se enfocó en la accesibilidad y en la robustez de las validaciones front-end para asegurar la integridad de los datos antes del procesamiento."
+      detallesTecnicos: "Stack: Node.js, Express, MongoDB (Mongoose), Socket.io, Handlebars y Bootstrap 5. Implementé Middlewares de manejo de errores, subida de archivos con Multer y arquitectura de Managers para la lógica de negocio."
     },
-    tecnologias: ["HTML", "CSS", "JavaScript", "UX/UI"]
+    tecnologias: ["Node.js", "MongoDB", "WebSockets", "Express", "Handlebars"]
   },
   {
     id: 4,
-    titulo: "Clustering Humano",
-    subtitulo: "Algoritmos de Grafos por Intereses",
+    titulo: "SpotSport",
+    subtitulo: "Gestión de Reservas Deportivas con Arquitectura Offline-First",
     imagenes: [
-      { src: clusteringHumano, alt: "Ingreso de Intereses" },
-      { src: resultadosClustering, alt: "Resultado del Clustering" }
+      { src: proyectoSpot_img1, alt: "Mapa Interactivo de Sedes Deportivas" },
+      { src: proyectoSpot_img2, alt: "Gestión de Reservas y Favoritos" },
+      { src: proyectoSpot_img3, alt: "Gestión de Reservas y Favoritos" },
+      { src: proyectoSpot_img4, alt: "Gestión de Reservas y Favoritos" }
+
     ],
     videoUrl: null,
+    githubUrl: "https://github.com/Facundo-Rauschen/SpotSport.git",
     cuerpo: {
-      introduccion: "Desarrollé una aplicación de análisis de datos que agrupa personas según sus afinidades utilizando algoritmos avanzados de grafos. El sistema cuantifica la similitud entre perfiles para generar clusters o grupos humanos con intereses compartidos de manera automatizada.",
+      introduccion: "SpotSport es una solución móvil integral desarrollada en React Native para la reserva de canchas en complejos multisede. El núcleo del proyecto es su sistema híbrido de persistencia, que garantiza un rendimiento fluido y disponibilidad de datos sin depender constantemente de la conexión a red.",
       puntosClave: [
-        "Modelado de perfiles basado en métricas (1-5) para categorías de Deportes, Música, Espectáculos y Ciencia.",
-        "Construcción de un grafo completo ponderado donde cada nodo representa a una persona y el peso de las aristas indica el índice de similitud.",
-        "Implementación del Algoritmo de Prim para hallar el Árbol Generador Mínimo (MST) de la red social.",
-        "Procesamiento de división de grupos mediante la eliminación estratégica de aristas críticas (de mayor peso) para formar componentes conexas independientes."
+        "Sincronización Híbrida: Implementación de un Sync Service que coordina la transferencia de datos entre Firebase (Cloud) y SQLite (Local) para una latencia cero en lecturas.",
+        "Arquitectura de Estado Global: Uso de Redux Toolkit para centralizar la información de sedes, favoritos y reservas, asegurando consistencia en toda la UI.",
+        "Geolocalización Avanzada: Integración con Google Maps API para la visualización de complejos deportivos y ubicación del usuario en tiempo real.",
+        "Lógica Offline-First: Estrategia de Seeding y Sync que permite el funcionamiento pleno de la app tras la carga inicial, optimizando el consumo de datos.",
+        "Gestión de Identidad y Hardware: Módulo de perfil con integración de cámara y galería para la personalización de avatares y persistencia de imágenes."
       ],
-      miAporte: "Diseñé e implementé la lógica algorítmica íntegramente en Java, asegurando la eficiencia en el cálculo del MST. Asimismo, desarrollé la interfaz web con HTML y CSS para permitir una carga de datos intuitiva y una visualización clara de los grupos resultantes.",
-      detallesTecnicos: "Stack: Java para el backend algorítmico y procesamiento de datos, con una interfaz frontend diseñada para facilitar la interacción y el testeo de los algoritmos de agrupación."
+      detallesTecnicos: "Stack: React Native (Expo Router), Redux Toolkit, SQLite, Firebase Auth/Firestore y Google Maps API. Estructura modular basada en servicios, hooks y slices de estado global."
     },
-    tecnologias: ["Java", "Algoritmos", "Grafos", "HTML", "CSS"]
+    tecnologias: ["React Native", "Redux", "SQLite", "Firebase", "Expo"]
   },
 ];

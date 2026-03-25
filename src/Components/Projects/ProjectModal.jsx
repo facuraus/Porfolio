@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FaGithub, FaPlay } from 'react-icons/fa'; // Asegúrate de tener react-icons instalado
 import './ProjectModal.css';
 
 const ProjectModal = ({ proyecto, isOpen, onClose }) => {
@@ -6,7 +7,6 @@ const ProjectModal = ({ proyecto, isOpen, onClose }) => {
 
   // 1. Bloquear Scroll, manejar Tecla Escape y Ocultar Navbar
   useEffect(() => {
-    // Seleccionamos la navbar (asegúrate de que esta sea la clase de tu componente Navbar)
     const navbar = document.querySelector('.navbar');
 
     const handleKeyDown = (e) => {
@@ -14,30 +14,25 @@ const ProjectModal = ({ proyecto, isOpen, onClose }) => {
     };
 
     if (isOpen) {
-      // Bloquear scroll
       document.body.style.overflow = 'hidden';
       document.body.style.paddingRight = '5px';
       window.addEventListener('keydown', handleKeyDown);
       
-      // Ocultar Navbar
       if (navbar) {
         navbar.style.opacity = '0';
         navbar.style.pointerEvents = 'none';
         navbar.style.transition = 'opacity 0.3s ease';
       }
     } else {
-      // Rehabilitar scroll
       document.body.style.overflow = 'unset';
       document.body.style.paddingRight = '0px';
       
-      // Mostrar Navbar
       if (navbar) {
         navbar.style.opacity = '1';
         navbar.style.pointerEvents = 'auto';
       }
     }
 
-    // Limpieza al desmontar
     return () => {
       document.body.style.overflow = 'unset';
       document.body.style.paddingRight = '0px';
@@ -82,13 +77,15 @@ const ProjectModal = ({ proyecto, isOpen, onClose }) => {
         <div className="modal-custom-content">
           {/* LADO IZQUIERDO: Visuales */}
           <div className="carousel">
-            {images.length > 0 && (
-              <img 
-                src={images[index].src} 
-                alt={images[index].alt} 
-                className="carousel-image" 
-              />
-            )}
+            <div className="carousel-image-container">
+              {images.length > 0 && (
+                <img 
+                  src={images[index].src} 
+                  alt={images[index].alt} 
+                  className="carousel-image" 
+                />
+              )}
+            </div>
             
             {images.length > 1 && (
               <div className="carousel-buttons">
@@ -97,14 +94,26 @@ const ProjectModal = ({ proyecto, isOpen, onClose }) => {
               </div>
             )}
 
-            {proyecto.videoUrl && (
-              <button 
-                className="video-btn" 
-                onClick={() => window.open(proyecto.videoUrl, '_blank')}
-              >
-                ▶ Ver Video: {proyecto.titulo}
-              </button>
-            )}
+            {/* CONTENEDOR DE ACCIONES (Botones de Video y GitHub) */}
+            <div className="modal-actions">
+              {proyecto.videoUrl && (
+                <button 
+                  className="action-btn video-btn" 
+                  onClick={() => window.open(proyecto.videoUrl, '_blank')}
+                >
+                  <FaPlay /> Ver Video
+                </button>
+              )}
+
+              {proyecto.githubUrl && (
+                <button 
+                  className="action-btn github-btn" 
+                  onClick={() => window.open(proyecto.githubUrl, '_blank')}
+                >
+                  <FaGithub /> Ver Repositorio
+                </button>
+              )}
+            </div>
           </div>
 
           {/* LADO DERECHO: Información */}
@@ -118,10 +127,6 @@ const ProjectModal = ({ proyecto, isOpen, onClose }) => {
                 <li key={i}>{punto}</li>
               ))}
             </ul>
-
-            <p className="modal-contribution">
-              <strong>Mi aporte:</strong> {proyecto.cuerpo.miAporte}
-            </p>
             
             <div className="tech-container">
               {proyecto.tecnologias.map((tech, i) => (
