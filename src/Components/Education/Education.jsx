@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import diplomaBackend from '../../assets/Diploma-Backend-CoderHouse.png';
+import diplomaDesarrollo from '../../assets/Diploma-Desarrollo-De-Aplicaciones.png'; 
 
 const Education = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [modalImage, setModalImage] = useState(null);
 
   const universityData = [
     {
@@ -22,20 +24,18 @@ const Education = () => {
     {
       title: "Programación Backend I",
       platform: "Coderhouse",
-      isCurrent: true // Marcamos que lo estás cursando
+      certificateImg: diplomaBackend 
     },
     {
       title: "Desarrollo de Aplicaciones",
       platform: "Coderhouse",
-      isCurrent: true
+      certificateImg: diplomaDesarrollo 
     }
   ];
 
-  const handleCertificateClick = (e, isCurrent) => {
-    if (isCurrent) {
-      e.preventDefault(); // Evita que abra un link
-      setShowModal(true); // Abre el modal
-    }
+  const handleCertificateClick = (e, imgPath) => {
+    e.preventDefault();
+    setModalImage(imgPath);
   };
 
   return (
@@ -69,7 +69,7 @@ const Education = () => {
             <a 
               href="#" 
               className="btn-certificate"
-              onClick={(e) => handleCertificateClick(e, course.isCurrent)}
+              onClick={(e) => handleCertificateClick(e, course.certificateImg)}
             >
               Ver Certificado →
             </a>
@@ -77,13 +77,23 @@ const Education = () => {
         ))}
       </div>
 
-      {/* MODAL */}
-      {showModal && (
-        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+      {/* MODAL PARA MOSTRAR LA IMAGEN */}
+      {modalImage && (
+        <div className="modal-overlay" onClick={() => setModalImage(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <h3>¡Certificado en camino! 🚀</h3>
-            <p>Actualmente me encuentro cursando esta formación. El certificado estará disponible una vez finalizado el curso.</p>
-            <button className="modal-close" onClick={() => setShowModal(false)}>X</button>
+            <button className="modal-close" onClick={() => setModalImage(null)}>X</button>
+            <div style={{ textAlign: 'center', marginTop: '10px' }}>
+              <img 
+                src={modalImage} 
+                alt="Certificado Curso" 
+                style={{ 
+                  maxWidth: '100%', 
+                  maxHeight: '75vh', 
+                  borderRadius: '6px',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+                }} 
+              />
+            </div>
           </div>
         </div>
       )}
